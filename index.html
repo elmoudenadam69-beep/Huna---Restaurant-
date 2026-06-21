@@ -3,228 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huna | Mediterranean Restaurant Cabo Negro</title>
+    <title>Huna | Haute Mediterranean Cuisine Cabo Negro</title>
     <style>
-        /* --- Design System & Variables --- */
+        /* --- Luxury Dark & Terracotta Theme --- */
         :root {
-            --primary: #D36B45; /* Warm Terracotta */
-            --secondary: #2B595A; /* Deep Sea Teal */
-            --accent: #F4EAE1; /* Soft Sand */
-            --dark: #222222;
-            --light: #FFFFFF;
-            --gray: #777777;
+            --primary: #D36B45;      /* Rich Terracotta */
+            --primary-dark: #B25330; /* Deep Burnt Earth */
+            --accent: #D4AF37;       /* Muted Luxury Gold */
+            --bg-dark: #0D0E10;      /* Premium Obsidian Black */
+            --bg-card: #16181C;      /* Deep Charcoal */
+            --text-light: #F4EAE1;   /* Soft Ivory Text */
+            --text-muted: #A0A5B0;   /* Elegant Slate Gray */
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
         }
 
         body {
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* --- Components --- */
+        p, th, td, a, .badge, .btn {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* --- Global Layout Structural Utilities --- */
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: 88%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            display: block;
+        }
+
+        /* --- Buttons & Interactive Elements --- */
         .btn {
             display: inline-block;
-            background: var(--primary);
-            color: var(--light);
-            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--text-light);
+            padding: 16px 36px;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(211, 107, 69, 0.2);
+            border: 1px solid transparent;
         }
 
         .btn:hover {
-            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(211, 107, 69, 0.4);
+            border-color: var(--accent);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--light);
-            color: var(--light);
+            border: 1px solid rgba(244, 234, 225, 0.3);
         }
 
         .btn-outline:hover {
-            background: var(--light);
-            color: var(--secondary);
+            background: var(--text-light);
+            color: var(--bg-dark);
         }
 
-        /* --- Header / Navigation --- */
+        /* --- Navigation Bar --- */
         header {
-            background: var(--light);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(13, 14, 16, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 22px 0;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--secondary);
-            letter-spacing: 2px;
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--text-light);
+            letter-spacing: 5px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 35px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
-        /* --- Hero Section --- */
+        /* --- Immersive Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            height: 70vh;
+            background: linear-gradient(rgba(13, 14, 16, 0.5), rgba(13, 14, 16, 0.85)), 
+                        url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1600&q=90') no-repeat center center/cover;
+            height: 85vh;
             display: flex;
             align-items: center;
-            color: var(--light);
             text-align: center;
         }
 
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-weight: 400;
             letter-spacing: 1px;
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: var(--text-muted);
             font-weight: 300;
         }
 
         .rating-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(5px);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 18px;
+            border-radius: 2px;
+            margin-bottom: 25px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        /* --- Features/About --- */
-        .features {
-            padding: 60px 0;
-            background: var(--accent);
-            text-align: center;
+        /* --- Sensory Experience Showcase --- */
+        .showcase {
+            padding: 100px 0;
+            background: var(--bg-dark);
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-        }
-
-        .card h3 {
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
-        /* --- Menu Highlight --- */
-        .menu-preview {
-            padding: 60px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 40px;
-        }
-
-        .menu-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .menu-table th, .menu-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        .menu-table th {
-            background-color: var(--secondary);
-            color: var(--light);
-        }
-
-        /* --- Info / Contact Section --- */
-        .info-section {
-            padding: 60px 0;
-            background: #fdfdfd;
-            border-top: 1px solid #eee;
-        }
-
-        .info-grid {
+        .showcase-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
+            align-items: center;
         }
 
-        .info-box h3 {
-            margin-bottom: 15px;
-            color: var(--secondary);
+        .showcase-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 400;
         }
 
-        .info-box p {
-            margin-bottom: 10px;
-            color: var(--gray);
+        .showcase-text p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
         }
 
-        /* --- Footer --- */
-        footer {
-            background: var(--secondary);
-            color: var(--light);
+        .showcase-image {
+            height: 450px;
+            background: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .showcase-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid var(--accent);
+            margin: 15px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* --- High-End Menu Epicurean List --- */
+        .menu-section {
+            padding: 100px 0;
+            background: var(--bg-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .menu-item {
+            padding-bottom: 25px;
+            border-bottom: 1px dashed rgba(244, 234, 225, 0.1);
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .menu-header h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .menu-price {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .menu-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* --- Sensory Highlight Banner --- */
+        .sensory-banner {
+            background: linear-gradient(rgba(13, 14, 16, 0.85), rgba(13, 14, 16, 0.85)),
+                        url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 120px 0;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
         }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
+        .sensory-banner p {
+            font-size: 2.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* --- Footer & Details --- */
+        footer {
+            background: var(--bg-dark);
+            padding: 80px 0 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-box h5 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .footer-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: rgba(244, 234, 225, 0.2);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            padding-top: 30px;
+        }
+
+        /* --- Elegant Responsiveness --- */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3.2rem; }
+            .showcase-grid, .menu-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
             .nav-links { display: none; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .info-grid { grid-template-columns: 1fr; gap: 30px; }
         }
     </style>
 </head>
@@ -232,99 +336,121 @@
 
     <header>
         <div class="container nav">
-            <div class="logo">HUNA</div>
+            <a href="#" class="logo">HUNA<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#visit">Find Us</a></li>
+                <li><a href="#experience">The Experience</a></li>
+                <li><a href="#menu">The Culinary Menu</a></li>
+                <li><a href="#reserve">Location</a></li>
             </ul>
-            <a href="tel:0641444949" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Call to Book</a>
+            <a href="tel:0641444949" class="btn" style="padding: 10px 22px;">Reserve Now</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container hero-content">
-            <div class="rating-badge">★ 4.6 (276 Reviews) • Mediterranean</div>
-            <h1>Mediterranean Culinary Escape</h1>
-            <p>Experience fresh, vibrant coastal flavors in the heart of Cabo Negro.</p>
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:0641444949" class="btn">06 41 44 49 49</a>
-                <a href="https://maps.google.com" target="_blank" class="btn btn-outline">Get Directions</a>
+            <div class="rating-badge">★ 4.6 Exquisite Rating • Cabo Negro</div>
+            <h1>An Unforgettable Mediterranean Escape</h1>
+            <p>Indulge in premium, sun-drenched coastal flavors orchestrated perfectly for the true culinary epicurean.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:0641444949" class="btn">Call 06 41 44 49 49</a>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-outline">Find Our Oasis</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="features">
+    <section id="experience" class="showcase">
+        <div class="container showcase-grid">
+            <div class="showcase-text">
+                <span style="color:var(--accent); text-transform:uppercase; letter-spacing:3px; font-size:0.85rem;">Sensory Perfection</span>
+                <h3 style="margin-top: 10px;">Dine Under Open Coastal Skies</h3>
+                <p>Nestled beautifully in Cabo Negro, Huna balances sophisticated luxury with natural coastal air. Our expansive, manicured outdoor seating area offers the ultimate setting for intimate late-night dinners, refreshing beachside afternoons, or unforgettable family gatherings.</p>
+                <p style="color: var(--accent); font-style: italic;">Average curated experience: MAD 100 – 150 per guest.</p>
+            </div>
+            <div class="showcase-image"></div>
+        </div>
+    </section>
+
+    <section class="sensory-banner">
+        <p>"Freshly caught local seafood, sizzling charcoal fire grills, and vibrant hand-plucked garden herbs. We don't just prepare food—we ignite the senses."</p>
+    </section>
+
+    <section id="menu" class="menu-section">
         <div class="container">
-            <h2 class="section-title">The Huna Experience</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🌿 Outdoor Seating</h3>
-                    <p>Relax and dine in the fresh coastal breeze of Cabo Negro.</p>
+            <h2 class="section-title">The Culinary Menu</h2>
+            <span class="section-subtitle">Crafted with Seasonality & Passion</span>
+            
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Crispy Coastal Calamari</h4>
+                        <span class="menu-price">MAD 65</span>
+                    </div>
+                    <p class="menu-desc">Golden-fried tender local calamari, dusted with premium Mediterranean sea salt and served with a zesty, rich house garlic-aioli.</p>
                 </div>
-                <div class="card">
-                    <h3>👶 Family Friendly</h3>
-                    <p>A welcoming environment complete with a dedicated kids' menu.</p>
+                
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>The Signature Huna Salad</h4>
+                        <span class="menu-price">MAD 55</span>
+                    </div>
+                    <p class="menu-desc">Crisp, cold heirloom greens tossed with sun-ripened tomatoes, aged feta, olives, and a luxurious virgin olive oil drizzle.</p>
                 </div>
-                <div class="card">
-                    <h3>💰 Great Value</h3>
-                    <p>Authentic quality dishes with an average spend of MAD 100–150 per person.</p>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Artisanal Seafood Paella</h4>
+                        <span class="menu-price">MAD 145</span>
+                    </div>
+                    <p class="menu-desc">Rich saffron-infused rice slow-cooked over open flame, packed full of fresh prawns, locally sourced mussels, and tender white fish.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Charcoal Prime Ribeye</h4>
+                        <span class="menu-price">MAD 160</span>
+                    </div>
+                    <p class="menu-desc">Premium selection cut of beef, perfectly marbled and seared over natural oak coals, paired beautifully with flame-roasted root vegetables.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Gourmet Petite Burger</h4>
+                        <span class="menu-price">MAD 55</span>
+                    </div>
+                    <p class="menu-desc">A premium, succulent house-ground beef patty tailored perfectly for younger connoisseurs. Served alongside hand-cut gold fries.</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Handcrafted Mocktails</h4>
+                        <span class="menu-price">MAD 35</span>
+                    </div>
+                    <p class="menu-desc">Crushed wild berries, fresh hand-pressed local mint, cold citrus, and carbonated botanical water over crushed ice.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="menu" class="menu-preview">
-        <div class="container">
-            <h2 class="section-title">Menu Highlights</h2>
-            <table class="menu-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Featured Items</th>
-                        <th>Price Range</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Starters</strong></td>
-                        <td>Fresh Mediterranean Salads, Crispy Calamari, Tapas</td>
-                        <td>MAD 40 – 70</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mains</strong></td>
-                        <td>Catch of the Day, Seafood Paella, Grilled Specialities</td>
-                        <td>MAD 90 – 160</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Kids Menu</strong></td>
-                        <td>Mini Burgers, Classic Pasta, Crispy Chicken Strips</td>
-                        <td>MAD 45 – 60</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section id="visit" class="info-section">
-        <div class="container info-grid">
-            <div class="info-box">
-                <h3>📍 Location & Address</h3>
-                <p>Mag 4, Cabo Huerto, Cabo Negro,<br>Commune Martil, Cabo Negro 93153</p>
-                <p><strong>Phone:</strong> 06 41 44 49 49</p>
+    <footer id="reserve">
+        <div class="container footer-grid">
+            <div class="footer-box">
+                <h5 style="color:var(--text-light); font-size:1.5rem; letter-spacing:3px;">HUNA<span>.</span></h5>
+                <p style="margin-top: 15px;">An exquisite modern escape delivering deep gastronomic passion and authentic Mediterranean heritage to the coast of northern Morocco.</p>
             </div>
-            <div class="info-box">
-                <h3>🕒 Reservations & Hours</h3>
-                <p>Perfect for lunch, afternoon post-beach dining, and late dinners.</p>
-                <p><em>Reservations are highly recommended for prime outdoor seating.</em></p>
-                <a href="tel:0641444949" class="btn" style="margin-top: 10px;">Call to Reserve Table</a>
+            <div class="footer-box">
+                <h5>The Sanctuary</h5>
+                <p>Mag 4, Cabo Huerto,<br>Cabo Negro, Commune Martil,<br>Cabo Negro 93153</p>
+                <p style="margin-top: 15px; color: var(--accent);"><strong>Direct Line:</strong> 06 41 44 49 49</p>
+            </div>
+            <div class="footer-box">
+                <h5>Hours & Allocations</h5>
+                <p><strong>Everyday:</strong> 12:00 PM – Late Night</p>
+                <p>A dedicated, gourmet kids' menu is available continuously.</p>
+                <p style="font-style: italic; color: var(--accent); margin-top: 10px;">Reservations are strongly requested for premium outdoor allocations.</p>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Huna Mediterranean Restaurant. All rights reserved.</p>
+        <div class="container copyright">
+            <p>© 2026 Huna Luxury Mediterranean Restaurant. Crafted for Unparalleled Dining.</p>
         </div>
     </footer>
 
